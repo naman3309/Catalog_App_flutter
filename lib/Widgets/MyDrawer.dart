@@ -6,7 +6,7 @@ class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
   final imgUrl =
-      "https://instagram.fbek1-4.fna.fbcdn.net/v/t51.2885-19/344865091_739809067882227_6101608267156713346_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fbek1-4.fna.fbcdn.net&_nc_cat=103&_nc_ohc=Lj4Czw-g84AAX-EzQVP&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAWR4WOWqmWsxshq6_rcJgdTD5tXOZPtK60QIJQm8BkFg&oe=650AEBEA&_nc_sid=8b3546";
+      "https://instagram.fbek1-4.fna.fbcdn.net/v/t51.2885-19/344865091_739809067882227_6101608267156713346_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fbek1-4.fna.fbcdn.net&_nc_cat=103&_nc_ohc=wVYRFH5IYzYAX924sCN&edm=ACWDqb8BAAAA&ccb=7-5&oh=00_AfAMzfixVoctm-27zbeyq8i1duKuqOokQoMPNw6jgCdijw&oe=6518C3AA&_nc_sid=ee9879";
 
   @override
   Widget build(BuildContext context) {
