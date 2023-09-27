@@ -13,41 +13,27 @@ class Items {
       required this.color,
       required this.image,
       required this.price});
+
+  factory Items.fromMap(Map<String, dynamic> map) {
+    return Items(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      color: map["color"],
+      image: map["image"],
+      price: map["price"],
+    );
+  }
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "color": color,
+        "image": image,
+        "price": price,
+      };
 }
 
 class Catalog {
-  static final items = [
-    Items(
-        id: 1,
-        name: "Iphone 15 ",
-        desc: "Apple Iphone 15th generation",
-        color: "Titanium",
-        image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
-        price: 999),
-    Items(
-        id: 2,
-        name: "Iphone 15 Plus",
-        desc: "Apple Iphone 15th generation plus",
-        color: "Titanium",
-        image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
-        price: 1199),
-    Items(
-        id: 3,
-        name: "Iphone 15 Pro",
-        desc: "Apple Iphone 15th generation Pro",
-        color: "Titanium",
-        image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
-        price: 1399),
-    Items(
-        id: 4,
-        name: "Iphone 15 Pro Max",
-        desc: "Apple Iphone 15th generation Pro Max",
-        color: "Titanium",
-        image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
-        price: 1999)
-  ];
+  static List<Items> items = [];
 }

@@ -21,10 +21,14 @@ class _HomeState extends State<Home> {
   }
 
   loadData() async {
+    await Future.delayed(const Duration(seconds: 2));
     final jsn = await rootBundle.loadString("assets/file/catalog.json");
     var decodedjson = jsonDecode(jsn);
-    final productData = decodedjson[0];
-    print(productData);
+    final productData = decodedjson["products"];
+    Catalog.items = List.from(productData)
+        .map<Items>((Item) => Items.fromMap(Item))
+        .toList();
+    setState(() {});
   }
 
   Widget build(BuildContext context) {
@@ -34,12 +38,14 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       // leading: Drawer(),),
-      body: ListView.builder(
+      body: (Catalog.items.isNotEmpty)?
+      ListView.builder(
         itemCount: Catalog.items.length,
         itemBuilder: (context, index) {
           return ItemWidget(item: Catalog.items[index]);
         },
-      ),
+      ):
+      const Center(child: CircularProgressIndicator()),
 
       drawer: const MyDrawer(),
     );
