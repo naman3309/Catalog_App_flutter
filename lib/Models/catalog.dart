@@ -31,7 +31,7 @@ class Catalog {
         desc: "Apple Iphone 15th generation plus",
         color: "Titanium",
         image:
-            "https://www.pinclipart.com/picdir/big/218-2189254_free-online-avatars-kid-characters-family-vector-for.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
         price: 1199),
     Items(
         id: 3,
@@ -39,7 +39,7 @@ class Catalog {
         desc: "Apple Iphone 15th generation Pro",
         color: "Titanium",
         image:
-            "https://www.pinclipart.com/picdir/big/218-2189254_free-online-avatars-kid-characters-family-vector-for.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
         price: 1399),
     Items(
         id: 4,
@@ -47,7 +47,7 @@ class Catalog {
         desc: "Apple Iphone 15th generation Pro Max",
         color: "Titanium",
         image:
-            "https://www.pinclipart.com/picdir/big/218-2189254_free-online-avatars-kid-characters-family-vector-for.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
         price: 1999)
   ];
 }
