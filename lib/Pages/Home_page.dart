@@ -31,6 +31,7 @@ class _HomeState extends State<Home> {
     setState(() {});
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -38,14 +39,42 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       // leading: Drawer(),),
-      body: (Catalog.items.isNotEmpty)?
-      ListView.builder(
-        itemCount: Catalog.items.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(item: Catalog.items[index]);
-        },
-      ):
-      const Center(child: CircularProgressIndicator()),
+      body: (Catalog.items.isNotEmpty)
+          ? GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 16, crossAxisSpacing: 16),
+              itemCount: Catalog.items.length,
+              itemBuilder: (context, index) {
+                final it = Catalog.items[index];
+                return Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  child: GridTile(
+                    header: Container(
+                      decoration: const BoxDecoration(color: Colors.deepPurple),
+                      child: Center(
+                        child: Text(
+                          it.name,
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    footer: Container(
+                        decoration:
+                            const BoxDecoration(color: Colors.deepPurple),
+                        child: Center(
+                          child: Text(
+                            "\$${it.price}",
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        )),
+                    child: Image.network(it.image),
+                  ),
+                );
+              },
+            )
+          : const Center(child: CircularProgressIndicator()),
 
       drawer: const MyDrawer(),
     );
