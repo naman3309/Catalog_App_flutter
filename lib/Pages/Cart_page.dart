@@ -1,3 +1,4 @@
+import 'package:catalog_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -12,7 +13,7 @@ class Cart extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
       ),
-      
+      body: Container(),
     );
   }
 }

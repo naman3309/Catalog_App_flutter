@@ -1,8 +1,8 @@
+import "package:flutter/cupertino.dart";
+import "package:velocity_x/velocity_x.dart";
 import "package:catalog_app/utils/Themes.dart";
 import "package:flutter/material.dart";
-
 import "package:catalog_app/Models/catalog.dart";
-import "package:velocity_x/velocity_x.dart";
 
 class DetailPage extends StatelessWidget {
   final Items item;
@@ -20,7 +20,7 @@ class DetailPage extends StatelessWidget {
         children: [
           Hero(
             tag: item.id,
-            child: Center(child: Image.network(item.image)),
+            child: Image.network(item.image),
           ),
           Expanded(
               child: VxArc(
@@ -30,14 +30,40 @@ class DetailPage extends StatelessWidget {
             child: Container(
               color: Mytheme.creamColor,
               width: context.screenWidth,
-              child: Column(
-                children: [
-                  item.name.text.xl4.color(Mytheme.darkBluishColor).make(),
-                  item.desc.text.xl.textStyle(context.captionStyle).make(),
-                ],
-              ).py64(),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    item.name.text.xl4.color(Mytheme.darkBluishColor).make(),
+                    item.desc.text.xl.textStyle(context.captionStyle).make(),
+                    "Voluptua stet duo clita diam est voluptua aliquyam sit, consetetur dolores sed sadipscing et aliquyam amet, diam justo magna sit sed sea lorem, elitr sed dolore justo justo dolor nonumy amet magna ut. Kasd ipsum elitr voluptua eirmod voluptua, est."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .scale(1.2)
+                        .make()
+                        .p32()
+                  ],
+                ).pOnly(top: 64),
+              ),
             ),
-          ))
+          )),
+          ButtonBar(
+            alignment: MainAxisAlignment.spaceBetween,
+            children: [
+              "\$${item.price}".text.make().pOnly(left: 16),
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Mytheme.darkBluishColor),
+                    shape: MaterialStateProperty.all(const StadiumBorder()),
+                  ),
+                  child: "Buy".text.xl.make(),
+                  onPressed: () {},
+                ).wh(100, 45),
+              )
+            ],
+          ),
         ],
       ),
     );
