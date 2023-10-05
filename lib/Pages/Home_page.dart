@@ -51,7 +51,10 @@ class _HomeState extends State<Home> {
               itemCount: Catalog.items.length,
               itemBuilder: (context, index) {
                 final it = Catalog.items[index];
-                return ItemWidget(item: it);
+                return InkWell(
+                  onTap: () => Navigator.push(context, ),
+                  child: ItemWidget(item: it),
+                );
               },
             )
           : const Center(child: CircularProgressIndicator()),
