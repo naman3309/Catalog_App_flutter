@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:catalog_app/Models/catalog.dart';
+import 'package:catalog_app/Pages/Details_page.dart';
 import 'package:catalog_app/Widgets/MyDrawer.dart';
 import 'package:catalog_app/Widgets/Product.dart';
 import 'package:catalog_app/utils/Themes.dart';
-// import 'package:catalog_app/Widgets/Product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -52,7 +52,10 @@ class _HomeState extends State<Home> {
               itemBuilder: (context, index) {
                 final it = Catalog.items[index];
                 return InkWell(
-                  onTap: () => Navigator.push(context, ),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(item: it))),
                   child: ItemWidget(item: it),
                 );
               },
