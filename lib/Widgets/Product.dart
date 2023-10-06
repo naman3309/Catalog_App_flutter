@@ -37,11 +37,11 @@ class ItemWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 16),
                     child: ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Mytheme.darkBluishColor),
+                        // backgroundColor:
+                        //     MaterialStateProperty.all(Mytheme.darkBluishColor),
                         shape: MaterialStateProperty.all(const StadiumBorder()),
                       ),
-                      child: "Buy".text.lg.make(),
+                      child: "Add to cart".text.lg.make(),
                       onPressed: () {},
                     ),
                   )

@@ -4,7 +4,6 @@ import 'package:catalog_app/Pages/Details_page.dart';
 import 'package:catalog_app/Widgets/MyDrawer.dart';
 import 'package:catalog_app/Widgets/Product.dart';
 import 'package:catalog_app/utils/Routes.dart';
-import 'package:catalog_app/utils/Themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Mytheme.creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
         title: const Text(
           "Catalog App",
