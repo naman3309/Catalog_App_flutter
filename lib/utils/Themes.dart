@@ -7,8 +7,8 @@ class Mytheme {
       primarySwatch: Colors.deepPurple,
       fontFamily: GoogleFonts.lato().fontFamily,
       primaryTextTheme: GoogleFonts.latoTextTheme(),
-      cardColor: creamColor,
-      canvasColor: Colors.white,
+      canvasColor: creamColor,
+      cardColor: Colors.white,
       buttonTheme: ButtonThemeData(buttonColor: darkBluishColor),
       appBarTheme: const AppBarTheme(
           color: Colors.white,

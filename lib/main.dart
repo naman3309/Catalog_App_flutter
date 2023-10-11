@@ -18,11 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: Mytheme.lightTheme(context),
       darkTheme: Mytheme.darkTheme(context),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       //darkTheme: Mytheme.darkTheme,
-      initialRoute: MyRoute.homeRoute,
       routes: {
+        "/": (context) => const Login(),
         MyRoute.loginRoute: (context) => const Login(),
         MyRoute.homeRoute: (context) => const Home(),
         MyRoute.cartRoute: (context) => const Cart(),
