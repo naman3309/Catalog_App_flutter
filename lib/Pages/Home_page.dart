@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
           ? ListView.builder(
               itemCount: Catalog.items.length,
               itemBuilder: (context, index) {
-                final it = Catalog.items[index];
+                final it = Catalog.getByPos(index);
                 return InkWell(
                   onTap: () => Navigator.push(
                       context,
