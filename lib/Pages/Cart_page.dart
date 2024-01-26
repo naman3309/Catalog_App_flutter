@@ -23,27 +23,32 @@ class _CartState extends State<Cart> {
       ),
       body: Column(
         children: [
-          ListView.builder(
-            itemCount: CartItems.length,
-            itemBuilder: (context, index) => ListTile(
-              leading:
-                  CircleAvatar(child: Image.network(CartItems[index].image)),
-              trailing: IconButton(
-                icon: const Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  CartItems.removeAt(index);
-                  setState(() {});
-                },
-              ),
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CartItems[index].name.text.make(),
-                  "\$${CartItems[index].price}".text.make(),
-                ],
-              ),
-            ),
-          ).p16().expand(),
+          CartItems.isEmpty
+              ? const Text(
+                  "Nothing to show yet",
+                  textScaleFactor: 2.2,
+                ).centered().expand()
+              : ListView.builder(
+                  itemCount: CartItems.length,
+                  itemBuilder: (context, index) => ListTile(
+                    leading: CircleAvatar(
+                        child: Image.network(CartItems[index].image)),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.remove_circle_outline),
+                      onPressed: () {
+                        CartItems.removeAt(index);
+                        setState(() {});
+                      },
+                    ),
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CartItems[index].name.text.make(),
+                        "\$${CartItems[index].price}".text.make(),
+                      ],
+                    ),
+                  ),
+                ).p16().expand(),
           const Divider(
             height: 2,
           ),
@@ -52,7 +57,10 @@ class _CartState extends State<Cart> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("\$${total()}"),
+                Text(
+                  "\$${total()}",
+                  textScaleFactor: 1.5,
+                ),
                 30.widthBox,
                 ElevatedButton(
                   onPressed: () {},

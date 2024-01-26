@@ -6,7 +6,7 @@ import 'package:catalog_app/Pages/Cart_page.dart';
 
 import '../utils/Themes.dart';
 
-class addCart extends StatelessWidget {
+class addCart extends StatefulWidget {
   final Items item;
   addCart({
     Key? key,
@@ -14,8 +14,15 @@ class addCart extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<addCart> createState() => _addCartState();
+}
+
+late bool c;
+
+class _addCartState extends State<addCart> {
+  @override
   Widget build(BuildContext context) {
-    bool c = CartItems.contains(item);
+    c = CartItems.contains(widget.item);
     return ElevatedButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Mytheme.darkBluishColor),
@@ -23,7 +30,7 @@ class addCart extends StatelessWidget {
       ),
       onPressed: () {
         if (!c) {
-          CartItems.add(item);
+          CartItems.add(widget.item);
         }
       },
       child: c
