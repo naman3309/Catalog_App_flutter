@@ -1,3 +1,4 @@
+import 'package:catalog_app/Widgets/add_button.dart';
 import "package:flutter/cupertino.dart";
 import "package:velocity_x/velocity_x.dart";
 import "package:catalog_app/utils/Themes.dart";
@@ -52,14 +53,8 @@ class DetailPage extends StatelessWidget {
               "\$${item.price}".text.make().pOnly(left: 16),
               Padding(
                 padding: const EdgeInsets.only(right: 16),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Mytheme.darkBluishColor),
-                    shape: MaterialStateProperty.all(const StadiumBorder()),
-                  ),
-                  child: "Buy".text.xl.make(),
-                  onPressed: () {},
+                child: addCart(
+                  item: item,
                 ).wh(100, 45),
               )
             ],
